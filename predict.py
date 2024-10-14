@@ -69,7 +69,7 @@ class Predictor(cog.Predictor):
             if not with_scratch:
 
                 stage_1_command = (
-                        "python test.py --test_mode Full --Quality_restore --test_input "
+                        "python3 test.py --test_mode Full --Quality_restore --test_input "
                         + stage_1_input_dir
                         + " --outputs_dir "
                         + stage_1_output_dir
@@ -83,7 +83,7 @@ class Predictor(cog.Predictor):
                 new_input = os.path.join(mask_dir, "input")
                 new_mask = os.path.join(mask_dir, "mask")
                 stage_1_command_1 = (
-                        "python detection.py --test_path "
+                        "python3 detection.py --test_path "
                         + stage_1_input_dir
                         + " --output_dir "
                         + mask_dir
@@ -98,7 +98,7 @@ class Predictor(cog.Predictor):
                     HR_suffix = ""
 
                 stage_1_command_2 = (
-                        "python test.py --Scratch_and_Quality_restore --test_input "
+                        "python3 test.py --Scratch_and_Quality_restore --test_input "
                         + new_input
                         + " --test_mask "
                         + new_mask
@@ -134,7 +134,7 @@ class Predictor(cog.Predictor):
             os.makedirs(stage_2_output_dir, exist_ok=True)
 
             stage_2_command = (
-                    "python detect_all_dlib_HR.py --url "
+                    "python3 detect_all_dlib_HR.py --url "
                     + stage_2_input_dir
                     + " --save_url "
                     + stage_2_output_dir
@@ -157,7 +157,7 @@ class Predictor(cog.Predictor):
 
             self.opts.checkpoint_name = "FaceSR_512"
             stage_3_command = (
-                    "python test_face.py --old_face_folder "
+                    "python3 test_face.py --old_face_folder "
                     + stage_3_input_face
                     + " --old_face_label_folder "
                     + stage_3_input_mask
@@ -183,7 +183,7 @@ class Predictor(cog.Predictor):
             os.makedirs(stage_4_output_dir, exist_ok=True)
 
             stage_4_command = (
-                    "python align_warp_back_multiple_dlib_HR.py --origin_url "
+                    "python3 align_warp_back_multiple_dlib_HR.py --origin_url "
                     + stage_4_input_image_dir
                     + " --replace_url "
                     + stage_4_input_face_dir
