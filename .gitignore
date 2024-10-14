@@ -1,4 +1,13 @@
 __pycache__/
 *.pyc
 *~
+.DS_Store
+myenv/
+Face_Enhancement/models/networks/
+Global/detection_models/
+*.pth
+*.zip
+*.pt
+*.dat
+*.bz2
 
