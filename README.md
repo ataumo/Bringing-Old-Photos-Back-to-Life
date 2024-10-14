@@ -36,6 +36,10 @@ The code is tested on Ubuntu with Nvidia GPUs and CUDA installed. Python>=3.6 is
 
 ## Installation
 
+> You could run [setup.sh](setup.sh) to install models and dependencies.
+
+<hr>
+
 Clone the Synchronized-BatchNorm-PyTorch repository for
 
 ```
